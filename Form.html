@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html lang="fa-ir">
+	<head>
+		<style>
+			body
+			{margin:0px}
+			
+/*****************************************************************************************/		
+			#main
+			{
+				width:1240px;
+				margin: 0 auto 0;
+			}
+/*****************************************************************************************/		
+			#i1
+		{
+			font-family:b homa; 
+			color:#1a1300;
+			font-size:11pt;
+		}
+		
+		</style>
+	</head>
+	<!-- پاک کردن تاریخچه هیستوری مرورگر  ctrl+shift+Del -->
+	<body>
+	<div id="main">
+	
+		<!-- novalidiate عدم اعتبار سنجی فرم است مانند نام، شهر و شماره تلفن در این فرم که اعتبار سنجی دارند-->
+		<!-- <form method="get" style="direction:rtl; font-family:b homa;  -->
+		<!-- padding:50px; color:darkblue;background-color:#f0f0f0" autocomplete="off" novalidate> -->
+		
+		<form method="get" style="direction:rtl; font-family:b homa; 
+		padding:50px; color:darkblue;background-color:#f0f0f0" autocomplete="off">
+		<!-- Autocomplete در مرورگر مقادیر ارسال شده را نمایش می دهد که پیش فرض آن  است و می توان آف کرد  -->
+		
+		<fieldset style="padding:30px;">
+			<legend style="color:darkblue; font-family:b titr">  &nbspورود اطلاعات کاربر&nbsp </legend>
+			
+			<!-- محدود کردن تعداد کاراکترهای ورودی برای نام و نام خانوادگی -->
+			<!-- نمی تواند خالی رها شود و ساب میت بزنید  Required -->
+			نام: <input id="i1" type="text" maxlength="15" name="fname" id="fname" required>
+			&nbsp &nbsp
+			
+			<!-- پترن کار ریکوآیرد را انجام نمی دهد -->
+			<!-- پترن زیر به کاربر اجازه نمیدهد به جای نام، عدد یا سایر کارکترها را وارد کند -->
+			نام خانوادگی: <input id="i1" type="text" maxlength="23" name="lname" id="lname" pattern="[A-Za-z]{5}">
+			&nbsp &nbsp
+			نام پدر: <input disabled>
+			<br/><br/>
+			
+			علاقه مندی ها:&nbsp &nbsp
+			<!-- با کلیک روی برچسب ها می توان گزینه ها را نیز فعال کرد -->
+			<!-- گزینه مطالعه به طور پیش فرض انتخاب شده است -->
+			<label for="NoSport">  ورزش </label>
+			<input type="checkbox" name="NoSport" id="NoSport" value="yes"/> 
+			&nbsp &nbsp
+			<label for="NoStudy">  مطالعه </label>
+			<input type="checkbox" name="NoStudy" id="NoStudy" checked="checked" value="yes"/> 
+			&nbsp &nbsp
+			<label for="NoVideo_Music"> فیلم و موسیقی </label>
+			<input type="checkbox" name="NoVideo_Music" id="NoVideo_Music" value="yes"/>  
+			<br/><br/>
+			
+			وضعیت تأهل: &nbsp
+			<!-- اگر نام ها مثل هم باشند می توان فقط یک دکمه رادیویی را انتخاب کرد -->
+			<!-- گزینه مجرد به طور پیش فرض انتخاب شده است -->
+			<label for="single"> مجرد </label>
+			<input type="radio" name="status"  id="single" value="1" checked="checked"/> 
+			<label for="married"> متأهل </label>
+			<input type="radio" name="status" id="married" value="2"/>
+			<br/><br/>
+			
+			کلمه عبور: <input id="i1" type="password" name="pass" id="pass" title="حداقل 4 کارکتر و ترکیبی از اعداد، حروف بزرگ و کوچک انگلیسی باشد" 
+			pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" placeholder="5Ty2e3"/> 
+			<br/><br/>
+			
+			توضیحات:
+			<br/>
+			<textarea id="i1" cols="100" rows="5"> لطفاً توضیحات لازم را وارد کنید. </textarea>
+			<br/>
+			
+			<!-- درحالت عادی گزینه اول پیش فرض نشان داده می شود مگر با دستور سلکتد عوض شود -->
+			مدرک تحصیلی: <select style="font-family:b homa; color:darkblue"> 
+				<option> زیر دیپلم</option>
+				<option> دیپلم</option>
+				<option> فوق دیپلم</option>
+				<option> لیسانس</option>
+				<option selected> فوق لیسانس</option>
+				<option> دکتری</option>
+				<option> پسا دکتری</option>
+			<select>
+			<br/><br/>	
+			
+			
+			<!-- نمی تواند خالی رها شود و ساب میت بزنید Required -->
+			انتخاب شهر: <input type="text" name="CityName" list="city" required 
+								style="font-family:b homa; color:darkblue" />
+				<datalist id="city">
+					<option value="تهران"/>
+					<option value="کرمان"/> 
+					<option value="شیراز"/> 
+					<option value="مازندران"/> 
+					<option value="اصفهان"/> 
+					<option value="مشهد"/> 					
+				</datalist>
+			<br/><br/>	
+			
+			کد پرسنل: <input id="i1" type="number" value="10000000" dir="ltr" /> &nbsp &nbsp
+			سن: <input id="i1" type="number" min="1" max="150" value="100" dir="ltr"/>
+			<br/><br/>	
+			
+			تاریخ تولد: <input type="date"/>
+			<br/><br/>
+			
+			تاریخ هفته: <input type="week">
+			<br/><br/>
+			
+			تاریخ ماه: <input type="month">
+			<br/><br/>
+			
+			تاریخ و زمان ورود: <input type="datetime-local"><br/>
+			<br/>
+			
+			زمان ورود: <input type="time">
+			<br/><br/>
+			
+			<!-- رویداد کلیک بر روی جعبه متن و نمایش پیام -->
+			کد واحد: <input id="i1" onclick="alert('در این قسمت کد واحد کارمندی را ثبت نمائید.')"></input>
+			<br/><br/>
+			
+			
+			
+			<fieldset style="padding:20px;">
+			<!-- ایمیل وارد شده باید واقعی باشد و قالب ایمیل را داشته باشد. وگرنه با انتخاب دکمه ارسال اطلاعات " ساب میت" خطا می دهد -->
+			<!-- ارسال چند ایمیل و مشاهده در نوار آدرس -->
+			<!-- ali@gmail.com, ali@yahoo.com -->
+				ایمیل: <input id="i1" type="email" title="www.Bahram.Adeliyan@Gmail.com" dir="ltr" multiple name="email" placeholder="example@yahoo.com">
+				&nbsp; &nbsp; &nbsp;
+	 
+				جستجو: <input id="i1" type="search">
+				&nbsp; &nbsp; &nbsp;
+				
+				<!-- \d یعنی فقط عدد بگیرد -->
+				<!-- انواع الگو ها در اینترنت وجود دارند -->
+				<!-- در اجرا نمی توان حروف نوشت یا قالب را رعایت نکرد با زدن دکمه ارسال پیام خطا می دهد -->
+				تلفن: <input id="i1" type="tel" dir="ltr" placeholder="021-77526312" pattern="\d{3}-\d{8}">
+				&nbsp; &nbsp; &nbsp;
+		
+				<!-- http://www.yahoo.com -->
+				<!-- ادرس باید درست وارد شود و در غیر اینصورت با انتخاب دکمه ساب میت خطا می دهد -->
+				آدرس وب سایت: <input id="i1" type="url" title="http://www.Google.com" dir="ltr" placeholder="http://www.example.com" pattern="https://.+">
+				
+				
+				<!-- هر دو حالت را می پذیرد    hhtp://      https:// -->
+				<!-- آدرس وب سایت: <input id="i1" type="url" title="http://www.Google.com" dir="ltr" placeholder="http://www.example.com" pattern="https://.+"> -->
+				<br/>
+			</fieldset>
+			<br/>
+			
+   			<!-- با انتخاب دکمه ساب میت، عدد ارسال شده را نشان می دهد -->
+			<!-- مقدار پیش فرض 50 است که آن را به 80 تغییر دادیم -->
+			صدا: <input type="range" name="range" min="10" max="99" value="80"/>
+			&nbsp; &nbsp; &nbsp;	
+				<!-- شماره رنگ را می دهد			 -->
+				<!-- %23 به معنی # است -->
+				<!-- چون در نوار آدرس نمیتوان # را نوشت -->
+				<!-- پیش فرض رنگ خودش ، سیاه است -->
+			انتخاب رنگ: <input type="color" name="NoColor" value="#00ff00"/>
+			<br/><br/>
+			
+			<input type="file">
+			<br/><br/>
+			
+			<!-- فرم را به حالت پیش فرض بر می گرداند و آن را پاک نمی کند -->
+			<input style="font-family:b homa; color:darkblue" type="reset" value="شروع مجدد"/>
+			&nbsp
+			<input style="font-family:b homa;color:darkblue" type="button" value="انتخاب"/>
+			&nbsp
+			<!-- مشاهده ارسال اطلاعات در نوار آدرس -->
+			<input style="font-family:b homa;color:darkblue" type="submit" value="ارسال اطلاعات"/>
+			&nbsp
+			<!-- رویداد کلیک بر روی دکمه و پس از آن تعیین پیامی که باید نمایش داده شود	 -->
+			<button onclick="alert('عملیات شما ثبت شد')"; style="background-color:rgb(200,206,255);font-family:b homa;color:darkblue;width:100px;height:30px;">ثبت اطلاعات</button>
+			&nbsp
+			<button type="button" onclick="location.href='https://ask.com';" style="width:100px;height:30px;">  ASK.com </button>
+			<br/><br/>
+			
+			<center>
+			<button style="background-image:url('pics/signin.png');width:175px;height:52px;" disabled> </button>
+			&nbsp
+			<button style="background-image:url('pics/download.png');width:175px;height:52px;"> </button>
+			</center>
+			<br/><br/>
+			
+			
+			<!-- فقط خواندنی است -->
+			آدرس شرکت:
+			<br/>
+			<textarea id="i1" cols="100" rows="2" readonly> تهران، خیابان آزادی، جنب بیمارستان سینا، پلاک 12، طبقه همکف واحد 3 </textarea>
+			<br/>
+			
+				
+		</fieldset>	
+		</form>
+	
+	</div>
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
